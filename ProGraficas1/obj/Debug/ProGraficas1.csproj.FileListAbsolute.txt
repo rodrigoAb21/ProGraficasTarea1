@@ -1,0 +1,9 @@
+c:\users\rodrigoab\documents\visual studio 2015\Projects\ProGraficas1\ProGraficas1\bin\Debug\ProGraficas1.exe.config
+c:\users\rodrigoab\documents\visual studio 2015\Projects\ProGraficas1\ProGraficas1\obj\Debug\ProGraficas1.csprojResolveAssemblyReference.cache
+c:\users\rodrigoab\documents\visual studio 2015\Projects\ProGraficas1\ProGraficas1\obj\Debug\ProGraficas1.Properties.Resources.resources
+c:\users\rodrigoab\documents\visual studio 2015\Projects\ProGraficas1\ProGraficas1\obj\Debug\ProGraficas1.csproj.GenerateResource.Cache
+C:\Users\RodrigoAB\documents\visual studio 2015\Projects\ProGraficas1\ProGraficas1\bin\Debug\ProGraficas1.exe
+C:\Users\RodrigoAB\documents\visual studio 2015\Projects\ProGraficas1\ProGraficas1\bin\Debug\ProGraficas1.pdb
+C:\Users\RodrigoAB\documents\visual studio 2015\Projects\ProGraficas1\ProGraficas1\obj\Debug\ProGraficas1.Form1.resources
+C:\Users\RodrigoAB\documents\visual studio 2015\Projects\ProGraficas1\ProGraficas1\obj\Debug\ProGraficas1.exe
+C:\Users\RodrigoAB\documents\visual studio 2015\Projects\ProGraficas1\ProGraficas1\obj\Debug\ProGraficas1.pdb
