@@ -66,9 +66,9 @@ namespace ProGraficas1
         {
             for (int i = 0; i < listaPuntos.Count - 1; i++)
             {
-                lugar.DrawLine(lapiz, listaPuntos[i].getX() + centroEsc.getX() + centroObj.getX(), listaPuntos[i].getY() + centroEsc.getY()
-                    + centroObj.getY(), listaPuntos[i + 1].getX() + centroEsc.getX() + centroObj.getX()
-                    , listaPuntos[i + 1].getY() + centroEsc.getY() + centroObj.getY());
+                lugar.DrawLine(lapiz, listaPuntos[i].getX() + centroEsc.getX() + centroObj.getX() + centroPol.getX(), listaPuntos[i].getY() + centroEsc.getY()
+                    + centroObj.getY() + centroPol.getY(), listaPuntos[i + 1].getX() + centroEsc.getX() + centroObj.getX() + centroPol.getX()
+                    , listaPuntos[i + 1].getY() + centroEsc.getY() + centroObj.getY() + centroPol.getY());
             }
         }
 

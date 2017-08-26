@@ -13,25 +13,26 @@ namespace ProGraficas1
 {
     public partial class Form1 : Form
     {
-        Escenario e;
+        private Escenario e;
 
-        Objeto o;
+        private Objeto o;
 
-        Poligono p1;
-        Poligono p2;
-        Poligono p3;
-        Poligono p4;
-        Poligono p5;
-        Poligono p6;
+        private Poligono p1;
+        private Poligono p2;
+        private Poligono p3;
+        private Poligono p4;
+        private Poligono p5;
+        private Poligono p6;
 
-        Punto centroEsc;
-        Punto centroObj;
-        Punto centroPol1;
-        Punto centroPol2;
-        Punto centroPol3;
-        Punto centroPol4;
-        Punto centroPol5;
-        Punto centroPol6;
+        
+        private Punto centroEsc;
+        private Punto centroObj;
+        private Punto centroPol1;
+        private Punto centroPol2;
+        private Punto centroPol3;
+        private Punto centroPol4;
+        private Punto centroPol5;
+        private Punto centroPol6;
 
         public Form1()
         {
