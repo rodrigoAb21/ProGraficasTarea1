@@ -52,6 +52,12 @@ namespace ProGraficas2.Datos
             set { tipo = value; }
         }
 
+        public List<Punto> ListaPuntos
+        {
+            get { return listaPuntos; }
+            set { listaPuntos = value; }
+        }
+
         public Punto CentroPol
         {
             get { return centroPol; }

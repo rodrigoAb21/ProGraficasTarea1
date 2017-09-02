@@ -8,18 +8,18 @@ namespace ProGraficas2.Datos
 {
     class Escenario
     {
-        private List<Objeto> listaObj;
+        private List<Objeto> listaObjetos;
         private Punto centroEsc;
 
         public Escenario()
         {
-            listaObj = new List<Objeto>();
+            listaObjetos = new List<Objeto>();
             centroEsc = new Punto(0, 0);
         }
 
         public Escenario(Punto Centro)
         {
-            listaObj = new List<Objeto>();
+            listaObjetos = new List<Objeto>();
             centroEsc = Centro;
         }
 
@@ -29,19 +29,25 @@ namespace ProGraficas2.Datos
             set { centroEsc = value; }
         }
 
+        public List<Objeto> ListaObjetos
+        {
+            get { return listaObjetos; }
+            set { listaObjetos = value; }
+        }
+
         public void addObj(Objeto o)
         {
-            listaObj.Add(o);
+            listaObjetos.Add(o);
         }
 
         public Objeto getObj(int index)
         {
-            return listaObj[index];
+            return listaObjetos[index];
         }
 
         public void removeIndexOf(int index)
         {
-            listaObj.RemoveAt(index);
+            listaObjetos.RemoveAt(index);
         }
 
     }

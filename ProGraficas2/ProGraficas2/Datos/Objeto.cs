@@ -30,6 +30,11 @@ namespace ProGraficas2.Datos
             set { centroObj = value; }
         }
 
+        public List<Poligono> ListaPoligonos
+        {
+            get { return listaPoligonos; }
+            set { listaPoligonos = value; }
+        }
 
         public void addPoligono(Poligono pol)
         {

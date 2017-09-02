@@ -8,9 +8,9 @@ namespace ProGraficas2.Datos
 {
     class Punto
     {
-        private int x;
-        private int y;
-        private int h;
+        private float x;
+        private float y;
+        private float h;
 
         public Punto()
         {
@@ -19,7 +19,7 @@ namespace ProGraficas2.Datos
             EjeH = 1;
         }
 
-        public Punto(int x, int y)
+        public Punto(float x, float y)
         {
             EjeX = x;
             EjeY = y;
@@ -27,23 +27,23 @@ namespace ProGraficas2.Datos
         }
 
 
-        public int EjeX
+        public float EjeX
         {
-            get { return x; }
+            get { return x ; }
             set { x = value; }
         }
 
         
 
-        public int EjeY
+        public float EjeY
         {
-            get { return y; }
+            get { return y ; }
             set { y = value; }
         }
 
         
 
-        public int EjeH
+        public float EjeH
         {
             get { return h; }
             set { h = value; }
