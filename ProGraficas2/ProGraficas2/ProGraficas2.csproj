@@ -50,7 +50,7 @@
     <Compile Include="Datos\Objeto.cs" />
     <Compile Include="Datos\Poligono.cs" />
     <Compile Include="Datos\Punto.cs" />
-    <Compile Include="Vista\Lapiz.cs" />
+    <Compile Include="Vista\Dibujo.cs" />
     <Compile Include="Vista\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

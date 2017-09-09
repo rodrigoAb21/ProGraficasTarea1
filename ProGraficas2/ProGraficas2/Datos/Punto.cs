@@ -14,20 +14,20 @@ namespace ProGraficas2.Datos
 
         public Punto()
         {
-            EjeX = 0;
-            EjeY = 0;
-            EjeH = 1;
+            X = 0;
+            Y = 0;
+            H = 1;
         }
 
         public Punto(float x, float y)
         {
-            EjeX = x;
-            EjeY = y;
-            EjeH = 1;
+            X = x;
+            Y = y;
+            H = 1;
         }
 
 
-        public float EjeX
+        public float X
         {
             get { return x ; }
             set { x = value; }
@@ -35,7 +35,7 @@ namespace ProGraficas2.Datos
 
         
 
-        public float EjeY
+        public float Y
         {
             get { return y ; }
             set { y = value; }
@@ -43,7 +43,7 @@ namespace ProGraficas2.Datos
 
         
 
-        public float EjeH
+        public float H
         {
             get { return h; }
             set { h = value; }

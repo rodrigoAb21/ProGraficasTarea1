@@ -23,10 +23,10 @@ namespace ProGraficas2.Datos
             centroPol = new Punto(0, 0);
         }
 
-        public Poligono(Punto Centro, byte Tipo)
+        public Poligono(Punto Centro)
         {
             listaPuntos = new List<Punto>();
-            tipo = Tipo;
+            tipo = (byte) TiposPol.CERRADO;
             centroPol = Centro;
         }
         
