@@ -7,3 +7,12 @@ C:\Users\RodrigoAB\documents\visual studio 2015\Projects\ProGraficas2\ProGrafica
 C:\Users\RodrigoAB\documents\visual studio 2015\Projects\ProGraficas2\ProGraficas2\obj\Debug\ProGraficas2.csproj.GenerateResource.Cache
 C:\Users\RodrigoAB\documents\visual studio 2015\Projects\ProGraficas2\ProGraficas2\obj\Debug\ProGraficas2.exe
 C:\Users\RodrigoAB\documents\visual studio 2015\Projects\ProGraficas2\ProGraficas2\obj\Debug\ProGraficas2.pdb
+C:\Users\RodrigoAB\Documents\GitHub\ProGraficasTarea1\ProGraficas2\ProGraficas2\bin\Debug\ProGraficas2.exe.config
+C:\Users\RodrigoAB\Documents\GitHub\ProGraficasTarea1\ProGraficas2\ProGraficas2\obj\Debug\ProGraficas2.exe
+C:\Users\RodrigoAB\Documents\GitHub\ProGraficasTarea1\ProGraficas2\ProGraficas2\obj\Debug\ProGraficas2.pdb
+C:\Users\RodrigoAB\Documents\GitHub\ProGraficasTarea1\ProGraficas2\ProGraficas2\bin\Debug\ProGraficas2.exe
+C:\Users\RodrigoAB\Documents\GitHub\ProGraficasTarea1\ProGraficas2\ProGraficas2\bin\Debug\ProGraficas2.pdb
+C:\Users\RodrigoAB\Documents\GitHub\ProGraficasTarea1\ProGraficas2\ProGraficas2\obj\Debug\ProGraficas2.csprojResolveAssemblyReference.cache
+C:\Users\RodrigoAB\Documents\GitHub\ProGraficasTarea1\ProGraficas2\ProGraficas2\obj\Debug\ProGraficas2.Form1.resources
+C:\Users\RodrigoAB\Documents\GitHub\ProGraficasTarea1\ProGraficas2\ProGraficas2\obj\Debug\ProGraficas2.Properties.Resources.resources
+C:\Users\RodrigoAB\Documents\GitHub\ProGraficasTarea1\ProGraficas2\ProGraficas2\obj\Debug\ProGraficas2.csproj.GenerateResource.Cache
