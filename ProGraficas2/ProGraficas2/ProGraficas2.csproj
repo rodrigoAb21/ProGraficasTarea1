@@ -46,12 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Negocio\Escenario.cs" />
-    <Compile Include="Negocio\Matriz.cs" />
-    <Compile Include="Negocio\MetodosMatriz.cs" />
-    <Compile Include="Negocio\Objeto.cs" />
-    <Compile Include="Negocio\Poligono.cs" />
-    <Compile Include="Negocio\Punto.cs" />
+    <Compile Include="Datos\Escenario.cs" />
+    <Compile Include="Datos\Matriz.cs" />
+    <Compile Include="Datos\MetodosMatriz.cs" />
+    <Compile Include="Datos\Objeto.cs" />
+    <Compile Include="Datos\Poligono.cs" />
+    <Compile Include="Datos\Punto.cs" />
     <Compile Include="Vista\Dibujo.cs" />
     <Compile Include="Vista\Form1.cs">
       <SubType>Form</SubType>

@@ -61,7 +61,6 @@ namespace ProGraficas2
             o.addPoligono(p4);
 
             esc = new Escenario(new Punto(0, 0));
-            esc.addObj(o);
             l = new Dibujo();
             InitializeComponent();
         }
@@ -94,11 +93,25 @@ namespace ProGraficas2
                 centro.X = centro.X - 50;
                 centro.Y = -centro.Y + 50;
                 esc.CentroEsc = centro;
+                esc.addObj(o);
                 pb = pictureBox1.CreateGraphics();
                 pb.TranslateTransform(pictureBox1.Width / 2, pictureBox1.Height / 2);
                 pb.ScaleTransform(1, -1);
                 l.dibujar2(pb, esc, pictureBox1.Height, pictureBox1.Width);
                 l.ejes(pb, pictureBox1.Width, pictureBox1.Height);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pb = pictureBox1.CreateGraphics();
+            pb.TranslateTransform(pictureBox1.Width / 2, pictureBox1.Height / 2);
+            pb.ScaleTransform(1, -1);
+            MetodosMatriz trans = new MetodosMatriz();
+            Objeto ot = new Objeto(o.CentroObj);
+            ot = trans.rotObj(trans.escaObj(o,0.5f, 0.5f), 45);
+            esc.addObj(ot);
+            l.dibujar2(pb, esc, pictureBox1.Height, pictureBox1.Width);
+            l.ejes(pb, pictureBox1.Width, pictureBox1.Height);
         }
     }
 }
