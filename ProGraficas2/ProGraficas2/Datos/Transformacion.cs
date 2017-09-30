@@ -36,6 +36,120 @@ namespace ProGraficas2.Datos
             }
         }
 
+        private Matriz identidad()
+        {
+            Matriz m = new Matriz();
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (i == j)
+                    {
+                        m.setData(1, i, j);
+                    }
+                    else
+                    {
+                        m.setData(0, i, j);
+                    }
+                }
+            }
+            return m;
+        }
+
+        private Matriz traslacion(float x, float y)
+        {
+            Matriz m = identidad();
+            m.setData(x, 2, 0);
+            m.setData(y, 2, 1);
+            return m;
+        }
+
+        private Matriz escalacion(float x, float y)
+        {
+            Matriz m = identidad();
+            m.setData(x, 0, 0);
+            m.setData(y, 1, 1);
+            return m;
+        }
+
+        private Matriz rotacion(float angulo)
+        {
+            Matriz m = identidad();
+            angulo = angulo * ((float)Math.PI / 180);
+            m.setData((float)Math.Cos(angulo), 0, 0);
+            m.setData((float)Math.Sin(angulo), 0, 1);
+            m.setData(-(float)Math.Sin(angulo), 1, 0);
+            m.setData((float)Math.Cos(angulo), 1, 1);
+            return m;
+        }
+
+        private Matriz reflexionX()
+        {
+            Matriz m = identidad();
+            m.setData(-1, 1, 1);
+            return m;
+        }
+
+        private Matriz reflexionY()
+        {
+            Matriz m = identidad();
+            m.setData(-1, 0, 0);
+            return m;
+        }
+
+        private Matriz reflexionC()
+        {
+            Matriz m = identidad();
+            m.setData(-1, 0, 0);
+            m.setData(-1, 1, 1);
+            return m;
+        }
+
+        private Matriz reflexionR()
+        {
+            Matriz m = identidad();
+            m.setData(0, 0, 0);
+            m.setData(1, 0, 1);
+            m.setData(1, 1, 0);
+            m.setData(0, 1, 1);
+            return m;
+        }
+
+        public void reflejarX()
+        {
+            matrix = multMatriz(matrix, reflexionX());
+        }
+
+        public void reflejarY()
+        {
+            matrix = multMatriz(matrix, reflexionY());
+        }
+
+        public void reflejarC()
+        {
+            matrix = multMatriz(matrix, reflexionC());
+        }
+
+        public void reflejarR()
+        {
+            matrix = multMatriz(matrix, reflexionR());
+        }
+
+        public void trasladar(float x, float y)
+        {
+            matrix = multMatriz(matrix, traslacion(x, y));
+        }
+
+        public void escalar(float x, float y)
+        {
+            matrix = multMatriz(matrix, escalacion(x, y));
+        }
+
+        public void rotar(float angulo)
+        {
+            matrix = multMatriz(matrix, rotacion(angulo));
+        }
+
         public Punto multPunto(Punto p, Matriz m)
         {
             Matriz mPunto = new Matriz(1, 3);
@@ -82,6 +196,16 @@ namespace ProGraficas2.Datos
             return res;
         }
 
+        public List<Poligono> multObj2(Objeto o, Matriz m)
+        {
+            Objeto res = new Objeto(o.CentroObj);
+            for (int i = 0; i < o.ListaPoligonos.Count; i++)
+            {
+                res.addPoligono(multPoligono(o.ListaPoligonos[i], m));
+            }
+            return res.ListaPoligonos;
+        }
+
         public Escenario multEscenario(Escenario e, Matriz m)
         {
             Escenario res = new Escenario(e.CentroEsc);
@@ -92,7 +216,7 @@ namespace ProGraficas2.Datos
             return res;
         }
 
-        public Matriz multMatriz(Matriz a, Matriz b)
+        private Matriz multMatriz(Matriz a, Matriz b)
         {
             Matriz res = new Matriz();
 
@@ -110,67 +234,9 @@ namespace ProGraficas2.Datos
             return res;
         }
 
-        public Matriz identidad()
-        {
-            Matriz m = new Matriz();
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    if (i == j)
-                    {
-                        m.setData(1, i, j);
-                    }
-                    else
-                    {
-                        m.setData(0, i, j);
-                    }
-                }
-            }
-            return m;
-        }
+        
 
-        public Matriz traslacion(float x, float y)
-        {
-            Matriz m = identidad();
-            m.setData(x, 2, 0);
-            m.setData(y, 2, 1);
-            return m;
-        }
-
-        public Matriz escalacion(float x, float y)
-        {
-            Matriz m = identidad();
-            m.setData(x, 0, 0);
-            m.setData(y, 1, 1);
-            return m;
-        }
-
-        public Matriz rotacion(float angulo)
-        {
-            Matriz m = identidad();
-            angulo = angulo * ((float)Math.PI / 180);
-            m.setData((float)Math.Cos(angulo), 0, 0);
-            m.setData((float)Math.Sin(angulo), 0, 1);
-            m.setData(-(float)Math.Sin(angulo), 1, 0);
-            m.setData((float)Math.Cos(angulo), 1, 1);
-            return m;
-        }
-
-        public void trasladar(float x, float y)
-        {
-            matrix = multMatriz(matrix, traslacion(x, y));
-        }
-
-        public void escalar(float x, float y)
-        {
-            matrix = multMatriz(matrix, escalacion(x, y));
-        }
-
-        public void rotar(float angulo)
-        {
-            matrix = multMatriz(matrix, rotacion(angulo));
-        }
+        
 
 
 

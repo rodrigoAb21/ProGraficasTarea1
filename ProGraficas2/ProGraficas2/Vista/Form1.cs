@@ -16,11 +16,15 @@ namespace ProGraficas2
     public partial class Form1 : Form
     {
         private Escenario esc;
+
         private Objeto o;
+        private Objeto ot;
+
         private Poligono p1;
         private Poligono p2;
         private Poligono p3;
         private Poligono p4;
+        private Transformacion t;
         
         private Dibujo l;
 
@@ -60,8 +64,18 @@ namespace ProGraficas2
             o.addPoligono(p3);
             o.addPoligono(p4);
 
+
+            ot = new Objeto(new Punto(0,0));
+            ot.addPoligono(p1);
+            ot.addPoligono(p2);
+            ot.addPoligono(p3);
+            ot.addPoligono(p4);
+
+
             esc = new Escenario(new Punto(0, 0));
+            esc.addObj(ot);
             l = new Dibujo();
+            t = new Transformacion();
             InitializeComponent();
         }
 
@@ -75,11 +89,8 @@ namespace ProGraficas2
             if (pb != null)
             {
                 pb.Clear(Color.White);
-                pb = pictureBox1.CreateGraphics();
-                pb.TranslateTransform(pictureBox1.Width / 2, pictureBox1.Height / 2);
-                pb.ScaleTransform(1, -1);
+                iniGraf();
                 l.dibujar2(pb, esc, pictureBox1.Height, pictureBox1.Width);
-                l.ejes(pb, pictureBox1.Width, pictureBox1.Height);
             }
         }
 
@@ -89,34 +100,129 @@ namespace ProGraficas2
             {
                 pb.Clear(Color.White);
             }
-                Punto centro = new Punto(e.X * 100 / pictureBox1.Width, e.Y * 100 / pictureBox1.Height);
-                centro.X = centro.X - 50;
-                centro.Y = -centro.Y + 50;
-                esc.CentroEsc = centro;
-                esc.addObj(o);
-                pb = pictureBox1.CreateGraphics();
-                pb.TranslateTransform(pictureBox1.Width / 2, pictureBox1.Height / 2);
-                pb.ScaleTransform(1, -1);
-                l.dibujar2(pb, esc, pictureBox1.Height, pictureBox1.Width);
-                l.ejes(pb, pictureBox1.Width, pictureBox1.Height);
+            iniGraf();
+            Punto centro = new Punto(e.X * 100 / pictureBox1.Width, e.Y * 100 / pictureBox1.Height);
+            centro.X = centro.X - 50;
+            centro.Y = -centro.Y + 50;
+            //ot.ListaPoligonos = t.o2(o, t.Matrix);
+            ot.CentroObj = centro;
+            l.dibujar2(pb, esc, pictureBox1.Height, pictureBox1.Width);
+                
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text != "" && textBox2.Text != "")
+            {
+                if (pb != null)
+                {
+                    pb.Clear(Color.White);
+                }
+                iniGraf();
+                float x = float.Parse(textBox1.Text);
+                float y = float.Parse(textBox2.Text);
+                t = new Transformacion();
+                t.trasladar(x, y);
+                ot.ListaPoligonos = t.multObj2(o, t.Matrix);
+                l.dibujar2(pb, esc, pictureBox1.Height, pictureBox1.Width);
+            }
+                        
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "" && textBox2.Text != "")
+            {
+                if (pb != null)
+                {
+                    pb.Clear(Color.White);
+                }
+                iniGraf();
+                float x = float.Parse(textBox1.Text);
+                float y = float.Parse(textBox2.Text);
+                t = new Transformacion();
+                t.escalar(x, y);
+                ot.ListaPoligonos = t.multObj2(o, t.Matrix);
+                l.dibujar2(pb, esc, pictureBox1.Height, pictureBox1.Width);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "")
+            {
+                if (pb != null)
+                {
+                    pb.Clear(Color.White);
+                }
+                iniGraf();
+                float x = float.Parse(textBox1.Text);
+                t = new Transformacion();
+                t.rotar(x);
+                ot.ListaPoligonos = t.multObj2(o, t.Matrix);
+                l.dibujar2(pb, esc, pictureBox1.Height, pictureBox1.Width);
+            }
+        }
+
+
+        private void iniGraf()
+        {
             pb = pictureBox1.CreateGraphics();
             pb.TranslateTransform(pictureBox1.Width / 2, pictureBox1.Height / 2);
             pb.ScaleTransform(1, -1);
-
-            Transformacion trans = new Transformacion();
-            
-            trans.escalar(0.5f, 0.5f);
-            trans.trasladar(30, 0);
-            trans.rotar(45);
-            Objeto ot = new Objeto(o.CentroObj);
-            ot = trans.multObjeto(o, trans.Matrix);
-            esc.addObj(ot);
-            l.dibujar2(pb, esc, pictureBox1.Height, pictureBox1.Width);
             l.ejes(pb, pictureBox1.Width, pictureBox1.Height);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (pb != null)
+            {
+                pb.Clear(Color.White);
+            }
+            iniGraf();
+            t = new Transformacion();
+            t.reflejarX();
+            ot.ListaPoligonos = t.multObj2(o, t.Matrix);
+            l.dibujar2(pb, esc, pictureBox1.Height, pictureBox1.Width);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (pb != null)
+            {
+                pb.Clear(Color.White);
+            }
+            iniGraf();
+            t = new Transformacion();
+            t.reflejarY();
+            ot.ListaPoligonos = t.multObj2(o, t.Matrix);
+            l.dibujar2(pb, esc, pictureBox1.Height, pictureBox1.Width);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (pb != null)
+            {
+                pb.Clear(Color.White);
+            }
+            iniGraf();
+            t = new Transformacion();
+            t.reflejarC();
+            ot.ListaPoligonos = t.multObj2(o, t.Matrix);
+            l.dibujar2(pb, esc, pictureBox1.Height, pictureBox1.Width);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (pb != null)
+            {
+                pb.Clear(Color.White);
+            }
+            iniGraf();
+            t = new Transformacion();
+            t.reflejarR();
+            ot.ListaPoligonos = t.multObj2(o, t.Matrix);
+            l.dibujar2(pb, esc, pictureBox1.Height, pictureBox1.Width);
         }
     }
 }

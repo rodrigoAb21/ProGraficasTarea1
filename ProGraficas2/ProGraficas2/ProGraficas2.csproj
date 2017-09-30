@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="Datos\Escenario.cs" />
     <Compile Include="Datos\Matriz.cs" />
-    <Compile Include="Datos\MetodosMatriz.cs" />
     <Compile Include="Datos\Objeto.cs" />
     <Compile Include="Datos\Poligono.cs" />
     <Compile Include="Datos\Punto.cs" />
